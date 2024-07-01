@@ -1,0 +1,139 @@
+{% include "header.html" %}
+<!-- #Signup  -->
+<section class="hero" id="home" style="background-image: url('../static/images/hero-bg.jpg')">
+    <div class="container">
+        <div class="hero-content" style="width: 60%">
+            <form action="login-verify" method="POST" class="footer-form">
+                <p class="footer-list-title">Sign Up</p>
+                <input type="hidden" name="role" value="NewCustomer" />
+                <div class="input-wrapper">
+                    <input
+                        type="text"
+                        name="first_name"
+                        placeholder="Enter First Name"
+                        value="{{ first_name | default('')}}"
+                        required
+                        aria-label="Your Name"
+                        class="input-field"
+                    />
+
+                    <input
+                        type="text"
+                        name="last_name"
+                        placeholder="Enter Last Name"
+                        value="{{ last_name | default('')}}"
+                        required
+                        aria-label="Your Name"
+                        class="input-field"
+                    />
+
+                    <input
+                        type="text"
+                        name="email"
+                        value="{{ email | default('')}}"
+                        placeholder="Enter Email"
+                        required
+                        aria-label="Email"
+                        class="input-field"
+                    />
+
+                    <input
+                        type="date"
+                        name="Date Of Birth"
+                        value="{{ dob | default('')}}"
+                        placeholder="Enter DOB"
+                        required
+                        aria-label="dob"
+                        class="input-field"
+                    />
+                </div>
+
+                <div class="input-wrapper">
+                    <input
+                        type="text"
+                        pattern="\d{10}"
+                        maxlength="10"
+                        name="phone"
+                        value="{{ phone | default('')}}"
+                        placeholder="Enter Phone"
+                        required
+                        aria-label="Your phone"
+                        class="input-field"
+                    />
+
+                    <input
+                        type="text"
+                        name="city"
+                        value="{{ city | default('')}}"
+                        placeholder="Enter City"
+                        required
+                        aria-label="City"
+                        class="input-field"
+                    />
+                    <input
+                        type="text"
+                        pattern="\d{5}"
+                        name="zip"
+                        value="{{ zip | default('')}}"
+                        placeholder="Enter Zipcode"
+                        required
+                        aria-label="Zipcode"
+                        class="input-field"
+                    />
+                    <select name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-wrapper">
+                    <input
+                        type="password"
+                        name="password"
+                        value="{{ password | default('')}}"
+                        placeholder="Enter Password"
+                        required
+                        aria-label="Your password"
+                        class="input-field"
+                    />
+
+                    <input
+                        type="password"
+                        name="confirm-password"
+                        value="{{ password | default('')}}"
+                        placeholder="Enter Password"
+                        required
+                        aria-label="Your password"
+                        class="input-field"
+                    />
+                </div>
+
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+
+        <figure class="hero-banner">
+            <img
+                src="../static/images/hero-banner-bg.png"
+                width="820"
+                height="716"
+                alt=""
+                aria-hidden="true"
+                class="w-100 hero-img-bg"
+            />
+
+            <img
+                src="../static/images/hero-banner.png"
+                width="700"
+                height="637"
+                loading="lazy"
+                alt="Burger"
+                class="w-100 hero-img"
+            />
+        </figure>
+    </div>
+</section>
+
+{% include "footer.html" %}
